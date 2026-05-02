@@ -3,87 +3,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cobblemon Світ</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Cobblemon Wiki</title>
+    <style>
+        /* ОСНОВНІ СТИЛІ ТА ФОН */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: #ecf0f1;
+            /* Фон: пейзаж Minecraft з затемненням для читабельності */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://wallpaperaccess.com');
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        /* НАВІГАЦІЯ */
+        nav {
+            background: rgba(26, 37, 47, 0.9);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 3px solid #3498db;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 15px 0;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            text-transform: uppercase;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a:hover { color: #3498db; }
+
+        /* СЕКЦІЇ */
+        .page { min-height: 100vh; padding-top: 80px; box-sizing: border-box; }
+        
+        h1 {
+            text-align: center;
+            color: #3498db;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            font-size: 2.5em;
+        }
+
+        .content-box {
+            background: rgba(44, 62, 80, 0.85);
+            backdrop-filter: blur(8px);
+            padding: 30px;
+            border-radius: 15px;
+            border: 1px solid rgba(255,255,255,0.1);
+            line-height: 1.8;
+        }
+
+        /* КАРТКИ ПОКЕМОНІВ */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            color: #2c3e50;
+            padding: 20px;
+            border-radius: 15px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
+        .card img { width: 140px; height: 140px; object-fit: contain; }
+        .badge { display: inline-block; padding: 5px 10px; border-radius: 5px; font-weight: bold; color: white; margin-bottom: 10px; }
+        .legendary { background: #e67e22; }
+        .mythical { background: #9b59b6; }
+
+        /* ІНСТРУМЕНТИ */
+        .tool-card {
+            background: rgba(0, 0, 0, 0.4);
+            border-left: 5px solid #3498db;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 0 10px 10px 0;
+        }
+
+        footer { text-align: center; padding: 40px; color: #bdc3c7; }
+    </style>
 </head>
 <body>
+
     <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#home">Головна</a></li>
-                <li><a href="#pokedex">Легенди</a></li>
-                <li><a href="#tools">Інструменти</a></li>
-            </ul>
-        </div>
+        <ul>
+            <li><a href="#about">Про Cobblemon</a></li>
+            <li><a href="#legends">Легенди та Міфічні</a></li>
+            <li><a href="#hunting">Ловля</a></li>
+        </ul>
     </nav>
 
-    <!-- Сторінка 1: Про мод -->
-    <section id="home" class="page">
+    <!-- СТОРІНКА 1: ПРО МОД -->
+    <section id="about" class="page">
         <div class="container">
-            <h1>Про Cobblemon</h1>
+            <h1>Всесвіт Cobblemon</h1>
             <div class="content-box">
-                <p><strong>Cobblemon</strong> — це мод для Minecraft з відкритим кодом, який додає покемонів у стилі, що ідеально вписується в гру. На відміну від інших модів, Cobblemon зосереджений на збереженні "блокової" візуальної складової Minecraft.</p>
-                <ul>
-                    <li>Сотні покемонів з різних поколінь.</li>
-                    <li>Бойова система на базі Pokémon Showdown.</li>
-                    <li>Плавна анімація та звуки.</li>
-                    <li>Інтеграція з фермерством та дослідженням світу.</li>
-                </ul>
+                <p><strong>Cobblemon</strong> — це передовий мод на покемонів для Minecraft, створений для тих, хто цінує дух оригінальної гри. На відміну від інших модифікацій, Cobblemon використовує моделі, що складаються з блоків, що дозволяє їм виглядати як органічна частина світу Mojang.</p>
+                <p>Ви можете подорожувати біомами, збирати ресурси для створення покеболів та змагатися з іншими тренерами. Мод постійно оновлюється, додаючи нові покоління покемонів та унікальні механіки взаємодії з навколишнім середовищем.</p>
             </div>
         </div>
     </section>
 
-    <!-- Сторінка 2: Легендарні покемони -->
-    <section id="pokedex" class="page">
+    <!-- СТОРІНКА 2: ЛЕГЕНДИ ТА МІФІЧНІ -->
+    <section id="legends" class="page">
         <div class="container">
-            <h1>Легендарні та Міфічні</h1>
+            <h1>Рідкісні Покемони</h1>
             <div class="grid">
+                <!-- Легендарні -->
                 <div class="card">
-                    <img src="https://githubusercontent.com" alt="Mewtwo">
-                    <h3>Mewtwo</h3>
-                    <p>Один із найпотужніших покемонів. У Cobblemon легендарні покемони з'являються вкрай рідко у специфічних біомах.</p>
+                    <span class="badge legendary">Легендарний</span>
+                    <img src="https://githubusercontent.com" alt="Articuno">
+                    <h3>Articuno</h3>
+                    <p>Крижаний птах правосуддя. З'являється у найхолодніших сніжних біомах під час хуртовини.</p>
                 </div>
                 <div class="card">
-                    <img src="https://githubusercontent.com" alt="Lugia">
-                    <h3>Lugia</h3>
-                    <p>Охоронець морів. Зустріч із ним — це справжнє випробування для тренера.</p>
+                    <span class="badge legendary">Легендарний</span>
+                    <img src="https://githubusercontent.com" alt="Raikou">
+                    <h3>Raikou</h3>
+                    <p>Втілення грому. Він мчить світом настільки швидко, що його появу можна помітити лише за спалахами блискавок.</p>
                 </div>
                 <div class="card">
-                    <img src="https://githubusercontent.com" alt="Rayquaza">
-                    <h3>Rayquaza</h3>
-                    <p>Міфічний дракон, що мешкає в озоновому шарі. Вимагає спеціальних умов для виклику.</p>
+                    <span class="badge legendary">Легендарний</span>
+                    <img src="https://githubusercontent.com" alt="Groudon">
+                    <h3>Groudon</h3>
+                    <p>Володар землі. У Cobblemon його можна зустріти в глибоких печерах або поблизу розпеченої лави.</p>
+                </div>
+
+                <!-- Міфічні -->
+                <div class="card">
+                    <span class="badge mythical">Міфічний</span>
+                    <img src="https://githubusercontent.com" alt="Mew">
+                    <h3>Mew</h3>
+                    <p>Має генетичний код усіх покемонів. Його надзвичайно важко знайти, він часто ховається в джунглях.</p>
+                </div>
+                <div class="card">
+                    <span class="badge mythical">Міфічний</span>
+                    <img src="https://githubusercontent.com" alt="Celebi">
+                    <h3>Celebi</h3>
+                    <p>Охоронець лісу, здатний подорожувати в часі. Шукайте його біля святинь у густих лісах.</p>
+                </div>
+                <div class="card">
+                    <span class="badge mythical">Міфічний</span>
+                    <img src="https://githubusercontent.com" alt="Jirachi">
+                    <h3>Jirachi</h3>
+                    <p>Покемон бажань. Кажуть, він прокидається раз на тисячу років, якщо йому заспівати чисту пісню.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Сторінка 3: Інструменти -->
-    <section id="tools" class="page">
+    <!-- СТОРІНКА 3: ІНСТРУМЕНТИ -->
+    <section id="hunting" class="page">
         <div class="container">
-            <h1>Інструменти для ловлі</h1>
+            <h1>Інструменти Тренера</h1>
             <div class="content-box">
-                <div class="tool-item">
-                    <h3>Poké Ball</h3>
-                    <p>Базовий м'яч. Виготовляється з заліза та априкорнів. Ефективний для слабких покемонів.</p>
+                <div class="tool-card">
+                    <h3>🟣 Master Ball</h3>
+                    <p>Найпотужніший покебол у грі. Він має **100% шанс успіху** при лові будь-якого покемона. Використовуйте його з розумом лише на найрідкісніших легенд!</p>
                 </div>
-                <div class="tool-item">
-                    <h3>Great & Ultra Balls</h3>
-                    <p>Мають підвищений шанс на успіх. Ultra Ball найкраще підходить для високорівневих монстрів.</p>
+                <div class="tool-card">
+                    <h3>🥧 Пиріг із зачарованих яблук (Enchanted Apple Pie)</h3>
+                    <p>Спеціальна їжа, яка у світі Cobblemon допомагає підготувати вашого покемона до важких битв або приманити певних істот. Це преміальний ресурс для справжніх майстрів.</p>
                 </div>
-                <div class="tool-item">
-                    <h3>Лікувальна станція (Healer)</h3>
-                    <p>Важливий інструмент для відновлення здоров'я вашої команди після битви.</p>
+                <div class="tool-card">
+                    <h3>🔴 Ultra Ball</h3>
+                    <p>Ваш основний вибір для сильних покемонів. Має високий коефіцієнт ловлі та створюється з чорних та жовтих априкорнів.</p>
                 </div>
-                <div class="tool-item">
-                    <h3>ПК (PC Storage)</h3>
-                    <p>Дозволяє зберігати та змінювати покемонів, які не поміщаються у вашій сумці (ліміт — 6).</p>
+                <div class="tool-card">
+                    <h3>🩹 Healer (Лікувальна станція)</h3>
+                    <p>Не забувайте брати з собою матеріали для крафту станції, адже після невдалої спроби ловлі ваша команда потребуватиме негайного відновлення.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <footer>
-        <p>Створено для фанатів Cobblemon &copy; 2024</p>
+        <p>Cobblemon Fan Site — Створено для кращих тренерів України</p>
     </footer>
+
 </body>
 </html>
