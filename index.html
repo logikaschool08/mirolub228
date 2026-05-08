@@ -1,3 +1,6 @@
+Додав ще два рядки з новими категоріями: **Стартові** (ті, з кого починається пригода) та **Псевдо-легендарні** (надзвичайно сильні покемони, що не поступаються легендам). Також оновив стилі для нових бейджів.
+
+```html
 <!DOCTYPE html>
 <html lang="uk">
 <head>
@@ -10,9 +13,8 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             color: #ecf0f1;
-            /* Фон: пейзаж Minecraft з затемненням для читабельності */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
-                        url('https://wallpaperaccess.com');
+                        url('https://wallpaperaccess.com/full/46664.jpg');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
@@ -24,7 +26,6 @@
             padding: 20px;
         }
 
-        /* НАВІГАЦІЯ */
         nav {
             background: rgba(26, 37, 47, 0.9);
             position: sticky;
@@ -52,7 +53,6 @@
 
         nav a:hover { color: #3498db; }
 
-        /* СЕКЦІЇ */
         .page { min-height: 100vh; padding-top: 80px; box-sizing: border-box; }
         
         h1 {
@@ -60,6 +60,17 @@
             color: #3498db;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
             font-size: 2.5em;
+        }
+
+        h2 {
+            text-align: center;
+            color: #f1c40f;
+            margin-top: 50px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #f1c40f;
+            display: inline-block;
+            width: 100%;
+            padding-bottom: 10px;
         }
 
         .content-box {
@@ -71,10 +82,9 @@
             line-height: 1.8;
         }
 
-        /* КАРТКИ ПОКЕМОНІВ */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 25px;
             margin-top: 30px;
         }
@@ -86,15 +96,20 @@
             border-radius: 15px;
             text-align: center;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .card:hover { transform: translateY(-10px); box-shadow: 0 10px 20px rgba(0,0,0,0.4); }
-        .card img { width: 140px; height: 140px; object-fit: contain; }
-        .badge { display: inline-block; padding: 5px 10px; border-radius: 5px; font-weight: bold; color: white; margin-bottom: 10px; }
+        .card img { width: 120px; height: 120px; object-fit: contain; margin: 0 auto; }
+        
+        .badge { display: inline-block; padding: 5px 10px; border-radius: 5px; font-weight: bold; color: white; margin-bottom: 10px; font-size: 0.8em; }
         .legendary { background: #e67e22; }
         .mythical { background: #9b59b6; }
+        .starter { background: #2ecc71; }
+        .pseudo { background: #34495e; }
 
-        /* ІНСТРУМЕНТИ */
         .tool-card {
             background: rgba(0, 0, 0, 0.4);
             border-left: 5px solid #3498db;
@@ -111,90 +126,111 @@
     <nav>
         <ul>
             <li><a href="#about">Про Cobblemon</a></li>
-            <li><a href="#legends">Легенди та Міфічні</a></li>
+            <li><a href="#legends">Покемодери</a></li>
             <li><a href="#hunting">Ловля</a></li>
         </ul>
     </nav>
 
-    <!-- СТОРІНКА 1: ПРО МОД -->
     <section id="about" class="page">
         <div class="container">
             <h1>Всесвіт Cobblemon</h1>
             <div class="content-box">
-                <p><strong>Cobblemon</strong> — це передовий мод на покемонів для Minecraft, створений для тих, хто цінує дух оригінальної гри. На відміну від інших модифікацій, Cobblemon використовує моделі, що складаються з блоків, що дозволяє їм виглядати як органічна частина світу Mojang.</p>
-                <p>Ви можете подорожувати біомами, збирати ресурси для створення покеболів та змагатися з іншими тренерами. Мод постійно оновлюється, додаючи нові покоління покемонів та унікальні механіки взаємодії з навколишнім середовищем.</p>
+                <p><strong>Cobblemon</strong> — це світ, де блокова естетика зустрічається з магією покемонів. Досліджуйте безкраї простори та зберіть власну унікальну команду!</p>
             </div>
         </div>
     </section>
 
-    <!-- СТОРІНКА 2: ЛЕГЕНДИ ТА МІФІЧНІ -->
     <section id="legends" class="page">
         <div class="container">
-            <h1>Рідкісні Покемони</h1>
-            <div class="grid">
-                <!-- Легендарні -->
-                <div class="card">
-                    <span class="badge legendary">Легендарний</span>
-                    <img src="articuno.png" alt="Articuno">
-                    <h3>Articuno</h3>
-                    <p>Крижаний птах правосуддя. З'являється у найхолодніших сніжних біомах під час хуртовини.</p>
-                </div>
-                <div class="card">
-                    <span class="badge legendary">Легендарний</span>
-                    <img src="https://githubusercontent.com" alt="Raikou">
-                    <h3>Raikou</h3>
-                    <p>Втілення грому. Він мчить світом настільки швидко, що його появу можна помітити лише за спалахами блискавок.</p>
-                </div>
-                <div class="card">
-                    <span class="badge legendary">Легендарний</span>
-                    <img src="https://githubusercontent.com" alt="Groudon">
-                    <h3>Groudon</h3>
-                    <p>Володар землі. У Cobblemon його можна зустріти в глибоких печерах або поблизу розпеченої лави.</p>
-                </div>
+            <h1>Покедери світу</h1>
 
-                <!-- Міфічні -->
+            <h2>Легенди та Міфічні</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="badge legendary">Легендарний</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/888.png" alt="Zacian">
+                    <h3>Zacian</h3>
+                    <p>Стародавній герой з мечем у зубах, що захищає світ.</p>
+                </div>
+                <div class="card">
+                    <span class="badge legendary">Легендарний</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/384.png" alt="Rayquaza">
+                    <h3>Rayquaza</h3>
+                    <p>Смарагдовий дракон, що тримає під контролем небеса.</p>
+                </div>
                 <div class="card">
                     <span class="badge mythical">Міфічний</span>
-                    <img src="https://githubusercontent.com" alt="Mew">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/151.png" alt="Mew">
                     <h3>Mew</h3>
-                    <p>Має генетичний код усіх покемонів. Його надзвичайно важко знайти, він часто ховається в джунглях.</p>
+                    <p>Першопредок усіх покемонів, здатний ставати невидимим.</p>
+                </div>
+            </div>
+
+            <h2>Стартові Покемони</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="badge starter">Стартовий</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png" alt="Charizard">
+                    <h3>Charizard</h3>
+                    <p>Вогняний титан. Його полум'я стає гарячішим з кожною перемогою.</p>
                 </div>
                 <div class="card">
-                    <span class="badge mythical">Міфічний</span>
-                    <img src="https://githubusercontent.com" alt="Celebi">
-                    <h3>Celebi</h3>
-                    <p>Охоронець лісу, здатний подорожувати в часі. Шукайте його біля святинь у густих лісах.</p>
+                    <span class="badge starter">Стартовий</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png" alt="Blastoise">
+                    <h3>Blastoise</h3>
+                    <p>Має потужні водяні гармати, що пробивають навіть сталь.</p>
                 </div>
                 <div class="card">
-                    <span class="badge mythical">Міфічний</span>
-                    <img src="https://githubusercontent.com" alt="Jirachi">
-                    <h3>Jirachi</h3>
-                    <p>Покемон бажань. Кажуть, він прокидається раз на тисячу років, якщо йому заспівати чисту пісню.</p>
+                    <span class="badge starter">Стартовий</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png" alt="Venusaur">
+                    <h3>Venusaur</h3>
+                    <p>Квітка на його спині вбирає сонячне світло для нищівних атак.</p>
+                </div>
+                <div class="card">
+                    <span class="badge starter">Стартовий</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/658.png" alt="Greninja">
+                    <h3>Greninja</h3>
+                    <p>Ніндзя-жаба, що рухається швидше, ніж око може помітити.</p>
+                </div>
+            </div>
+
+            <h2>Псевдо-Легендарні (Елітні)</h2>
+            <div class="grid">
+                <div class="card">
+                    <span class="badge pseudo">Псевдо-Легенда</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/149.png" alt="Dragonite">
+                    <h3>Dragonite</h3>
+                    <p>Доброзичливий дракон, здатний облетіти світ за 16 годин.</p>
+                </div>
+                <div class="card">
+                    <span class="badge pseudo">Псевдо-Легенда</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/445.png" alt="Garchomp">
+                    <h3>Garchomp</h3>
+                    <p>Пустельний мисливець, що літає зі швидкістю звуку.</p>
+                </div>
+                <div class="card">
+                    <span class="badge pseudo">Псевдо-Легенда</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/248.png" alt="Tyranitar">
+                    <h3>Tyranitar</h3>
+                    <p>Броньований монстр, чиї кроки викликають землетруси.</p>
+                </div>
+                <div class="card">
+                    <span class="badge pseudo">Псевдо-Легенда</span>
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/376.png" alt="Metagross">
+                    <h3>Metagross</h3>
+                    <p>Живий суперкомп'ютер з чотирма мізками та залізним тілом.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- СТОРІНКА 3: ІНСТРУМЕНТИ -->
     <section id="hunting" class="page">
         <div class="container">
             <h1>Інструменти Тренера</h1>
             <div class="content-box">
                 <div class="tool-card">
                     <h3>🟣 Master Ball</h3>
-                    <p>Найпотужніший покебол у грі. Він має **100% шанс успіху** при лові будь-якого покемона. Використовуйте його з розумом лише на найрідкісніших легенд!</p>
-                </div>
-                <div class="tool-card">
-                    <h3>🥧 Пиріг із зачарованих яблук (Enchanted Apple Pie)</h3>
-                    <p>Спеціальна їжа, яка у світі Cobblemon допомагає підготувати вашого покемона до важких битв або приманити певних істот. Це преміальний ресурс для справжніх майстрів.</p>
-                </div>
-                <div class="tool-card">
-                    <h3>🔴 Ultra Ball</h3>
-                    <p>Ваш основний вибір для сильних покемонів. Має високий коефіцієнт ловлі та створюється з чорних та жовтих априкорнів.</p>
-                </div>
-                <div class="tool-card">
-                    <h3>🩹 Healer (Лікувальна станція)</h3>
-                    <p>Не забувайте брати з собою матеріали для крафту станції, адже після невдалої спроби ловлі ваша команда потребуватиме негайного відновлення.</p>
+                    <p>Гарантований успіх лову для найсильніших істот.</p>
                 </div>
             </div>
         </div>
@@ -206,3 +242,5 @@
 
 </body>
 </html>
+
+```
